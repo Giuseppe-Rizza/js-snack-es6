@@ -29,4 +29,20 @@ const cycles = [
 
 ];
 
-console.log(cycles);
+console.table(cycles);
+
+
+let lightBike = cycles[0];
+
+for (let i = 0; i < cycles.length; i++) {
+
+    if (cycles[i].weight < lightBike.weight) {
+
+        lightBike = cycles[i];
+    }
+    
+}
+
+let lowerWeight = Math.min(cycles.weight);
+
+console.log(`La bici più leggera è ${lightBike.name} e pesa ${lightBike.weight}`);
