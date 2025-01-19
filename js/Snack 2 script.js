@@ -1,4 +1,4 @@
-//Creo array oggetti bici
+//Creo array oggetti squadre di calcio
 
 const teams = [
 
@@ -37,7 +37,24 @@ const teams = [
 console.table(teams);
 
 
+const genRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+
 for (let i = 0; i < teams.length; i++) {
-    teams[i].points;
-    teams[i].fouls;
+
+    for (let key in teams[i]) {
+        if (teams[i][key] === 0) {
+            teams[i][key] = genRandomNumber(1, 30);
+        }
+    }
+};
+
+
+const numberOfFouls = [];
+
+
+for (let i = 0; i < teams.length; i++) {
+    numberOfFouls.push({ name: teams[i].name, fouls: teams[i].fouls})
 }
+
+console.log(numberOfFouls);
